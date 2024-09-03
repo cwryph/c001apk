@@ -39,7 +39,7 @@ import net.mikaelzero.mojito.view.sketch.core.uri.AssetUriModel;
 import net.mikaelzero.mojito.view.sketch.core.uri.DrawableUriModel;
 import net.mikaelzero.mojito.view.sketch.core.util.SketchUtils;
 
-import libs.sketch.gif.BuildConfig;
+import me.panpf.sketch.gif.BuildConfig;
 
 /**
  * {@link Sketch} 是一个功能强大且全面的图片加载器，可以从网络或者本地加载图片，支持 gif、手势缩放以及分块显示超大图
@@ -73,9 +73,7 @@ public class Sketch {
             if (oldInstance != null) return oldInstance;
 
             Sketch newInstance = new Sketch(context);
-            SLog.i(null, "Version %s %s(%d) -> %s",
-                    BuildConfig.BUILD_TYPE, BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE, newInstance.configuration.toString());
-
+           
             Initializer initializer = SketchUtils.findInitializer(context);
             if (initializer != null) {
                 initializer.onInitialize(context.getApplicationContext(), newInstance.configuration);
